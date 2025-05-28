@@ -1,0 +1,21 @@
+# Netlify configuration file
+
+[build]
+  command = "npm run build"  # Or "yarn build"
+  publish = ".next"          # Default Next.js build output directory
+
+# Optional: Environment variables can also be set here,
+# but it's generally recommended to set them in the Netlify UI for better security,
+# especially for sensitive keys.
+
+# Example of redirect for Netlify Functions (if you use them directly via Netlify)
+# [[redirects]]
+#  from = "/api/*"
+#  to = "/.netlify/functions/:splat"
+#  status = 200
+
+# If you are using Next.js API routes (pages/api), Netlify's Next.js plugin
+# usually handles this automatically. The redirects below are more for custom functions.
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
